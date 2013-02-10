@@ -1,0 +1,9 @@
+int function_A(int p, int q)
+{
+  int c = p + q;
+  return c;
+}
+int main(int argc, char *argv[])
+{
+  return 0;
+}

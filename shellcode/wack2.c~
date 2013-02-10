@@ -1,0 +1,17 @@
+#include <stdlib.h>
+ 
+// 64-bit exit syscall
+#define SHELLCODE
+"x48x31xc0x48x83xc0x3cx48x31xffx0fx05"
+ 
+int main (int argc, char **argv) {
+ 
+    // function pointer
+    int (*function)();
+ 
+    // cast shellcode as a function
+    function = (int(*)())SHELLCODE;
+ 
+    // execute shellcode function
+    (int)(*function)();
+    return 0;

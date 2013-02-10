@@ -1,0 +1,19 @@
+section .text
+
+  global  _start
+
+_start:
+
+  jmp end
+code:
+  pop rbx			
+  xor eax, eax
+  movq rdx, rax
+  push rax		
+  push rbx	
+  movq rcx, rsp
+  mov al, 0x0b
+  syscall
+end:
+  call code
+  db "bin/sh"

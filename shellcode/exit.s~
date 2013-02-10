@@ -1,0 +1,9 @@
+Section .text
+
+  global  _start
+
+_start:
+
+  movq rbx, 0
+  movq rax, 1
+  syscall
